@@ -17,6 +17,14 @@ environment:
 
 ```
 
+also add the network connection to the end of the file
+```
+networks:
+  default:
+    external:
+      name: nginx-proxy
+```
+
 eg. an xampp instance would look something like this
 ```
 version: '2'
@@ -34,4 +42,8 @@ services:
     environment:
     - VIRTUAL_HOST=dev.angama.co.za
     restart: always
+networks:
+  default:
+    external:
+      name: nginx-proxy
 ```
